@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([['Torrent Client App', 'Number of IPs'], ['μTorrent', 10008], ['qBittorrent', 4527], ['libtorrent', 4051], ['BitTorrent', 1850], ['UW', 1365], ['Vuze', 930], ['Movie', 531], ['BitWombat', 386], ['Tixati', 364], ['Lr', 343], ['Deluge', 332], ['FrostWire', 315], ['BitLord', 308], ['MovieTvshow', 263], ['FDM', 249], ['--Unknown_Unidentifiable--', 211], ['BiglyBT', 132], ['Folx', 83], ['LibreTorrent', 83], ['MediaGet2', 64], ['Azureus', 53], ['Transmission', 51], ['Torch', 42], ['Mainline', 33], ['libTorrent', 28], ['Elementum', 22], ['torrent2http', 20], ['PicoTorrent', 17], ['aD', 11], ['ADM', 7], ['coc_coc_browser', 7], ['FD', 6], ['Torrent', 6], ['Quasar', 5], ['MovieDownloader', 3], ['aTorrent', 2], ['PI', 2], ['FL', 2], ['tTorrent', 2], ['qBittorrent Enhanced', 2], ['client_test', 2], ['KN', 1], ['Captain', 1], ['BitBlinder', 1], ['BitComet', 1], ['Flud', 1], ['AD', 1], ['BA', 1], ['-XL0012-+_', 1], ['xd', 1], ['TorrentvillaClient', 1], ['AzTorrent', 1], ['rTorrent', 1], ['53', 1], ['libtorrent_leap', 1], ['Media', 1], ['iLivid', 1], ['TD', 1], ['Xunlei', 1]]);
+
+        var options = {
+          title: 'Torrent Client App and all detected IPs',
+          width: 900,
+          legend: { position: 'none' },
+          chart: { title: 'Torrent Client App and detected IPs',
+                   subtitle: 'Top.Gun.Maverick.2022.1080p.HDTS.V2.x264' },
+          bars: 'horizontal', // Required for Material Bar Charts.
+          axes: {
+            x: {
+              0: { side: 'top', label: 'Number of Detected IPs'} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "90%" }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+        chart.draw(data, options);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="top_x_div" style="width: 900px; height: 2800px;"></div>
+  </body>
+</html>

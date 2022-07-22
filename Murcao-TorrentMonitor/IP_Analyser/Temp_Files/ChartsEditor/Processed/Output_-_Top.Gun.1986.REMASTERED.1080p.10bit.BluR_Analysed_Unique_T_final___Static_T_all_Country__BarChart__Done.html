@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([['Country', 'Number of IPs'], ['India', 646], ['South Korea', 376], ['United States', 290], ['Philippines', 201], ['United Kingdom', 167], ['Australia', 146], ['Bangladesh', 141], ['Netherlands', 140], ['Canada', 137], ['South Africa', 122], ['Pakistan', 78], ['Indonesia', 62], ['Poland', 58], ['Singapore', 48], ['Nepal', 46], ['France', 44], ['Brazil', 42], ['Ethiopia', 39], ['Serbia', 38], ['New Zealand', 38], ['Malaysia', 37], ['Portugal', 35], ['Belgium', 34], ['Greece', 32], ['Switzerland', 31], ['Croatia', 30], ['Saudi Arabia', 29], ['Israel', 28], ['United Arab Emirates', 27], ['Italy', 26], ['Norway', 26], ['Sri Lanka', 25], ['Kenya', 25], ['Argentina', 24], ['Mexico', 23], ['Romania', 22], ['Turkey', 21], ['Spain', 18], ['Ireland', 17], ['Thailand', 17], ['Algeria', 17], ['Hong Kong', 16], ['Sweden', 16], ['China', 16], ['Egypt', 15], ['Japan', 15], ['Qatar', 14], ['Slovenia', 13], ['Finland', 11], ['Czech Republic', 11], ['Nigeria', 11], ['Latvia', 10], ['Iran', 10], ['Hungary', 10], ['Vietnam', 10], ['Lebanon', 10], ['Denmark', 10], ['Morocco', 10], ['Jamaica', 9], ['Tanzania', 9], ['Macedonia', 9], ['Russia', 9], ['Lithuania', 9], ['Uganda', 8], ['Germany', 8], ['Mauritius', 8], ['Zambia', 7], ['Taiwan', 7], ['Trinidad and Tobago', 6], ['Iceland', 6], ['Bulgaria', 6], ['Ghana', 5], ['Bahrain', 5], ['Venezuela', 5], ['Uruguay', 5], ['Kuwait', 5], ['Malta', 4], ['Maldives', 4], ['Costa Rica', 4], ['Slovakia', 4], ['Austria', 4], ['Namibia', 3], ['El Salvador', 3], ['Macao', 3], ['Cyprus', 3], ['Peru', 3], ['Zimbabwe', 3], ['Bosnia and Herzegovina', 3], ['Myanmar', 3], ['Cape Verde', 3], ['Estonia', 3], ['Chile', 3], ['Angola', 2], ['Fiji', 2], ['Nicaragua', 2], ['Malawi', 2], ['Brunei', 2], ['Luxembourg', 2], ['Jersey', 2], ['Ecuador', 2], ['Senegal', 2], ['Mozambique', 2], ['Benin', 2], ['Paraguay', 2], ['Haiti', 2], ['Colombia', 2], ['Dominican Republic', 2], ['Swaziland', 2], ['Albania', 1], ['Jordan', 1], ['Guam', 1], ['Isle of Man', 1], ['French Polynesia', 1], ['Montenegro', 1], ['Cambodia', 1], ['Afghanistan', 1], ['Kosovo', 1], ['Reunion', 1], ['Botswana', 1], ['Curacao', 1], ['Papua New Guinea', 1], ['Rwanda', 1], ['Saint Kitts and Nevis', 1], ['Bonaire, Saint Eustatius and Saba ', 1], ['Bolivia', 1], ['Yemen', 1], ['Guatemala', 1], ['Oman', 1]]);
+
+        var options = {
+          title: 'Countries and all detected IPs',
+          width: 900,
+          legend: { position: 'none' },
+          chart: { title: 'Countries and detected IPs',
+                   subtitle: 'Top.Gun.1986.REMASTERED.1080p.10bit.BluR' },
+          bars: 'horizontal', // Required for Material Bar Charts.
+          axes: {
+            x: {
+              0: { side: 'top', label: 'Number of Detected IPs'} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "90%" }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+        chart.draw(data, options);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="top_x_div" style="width: 900px; height: 2800px;"></div>
+  </body>
+</html>

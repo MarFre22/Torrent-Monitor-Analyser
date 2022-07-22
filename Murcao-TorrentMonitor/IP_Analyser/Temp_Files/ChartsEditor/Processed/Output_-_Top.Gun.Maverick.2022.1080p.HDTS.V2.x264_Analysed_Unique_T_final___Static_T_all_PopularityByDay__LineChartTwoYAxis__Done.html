@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <button id="change-chart">Change to Classic</button>
+
+    <script type="text/javascript">
+
+      google.charts.load('current', {'packages':['line', 'corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var button = document.getElementById('change-chart');
+        var chartDiv = document.getElementById('chart_div');
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('date', 'Month');
+        data.addColumn('number', "Rank");
+        data.addColumn('number', "Complete by Tracker");
+        data.addColumn('number', "Incomplete by Tracker");
+        data.addColumn('number', "Complete Connected");
+        data.addColumn('number', "Seeds Connected");
+        data.addColumn('number', "Peers Connected");
+        data.addColumn('number', "Seeds Total");
+        data.addColumn('number', "Peers Total");
+        
+
+        data.addRows([[new Date(2022,6,16), 28, 4931.0, 2545.0, 236.0, 268.0, 315.0, 2020.0, 14476.0], [new Date(2022,6,17), 30, 4707.0, 2164.0, 228.0, 267.0, 313.0, 5598.0, 36704.0], [new Date(2022,6,18), 26, 5040.0, 2432.0, 225.0, 261.0, 309.0, 9587.0, 50000.0], [new Date(2022,6,19), 27, 5288.0, 2703.0, 221.0, 263.0, 314.0, 12179.0, 50000.0], [new Date(2022,6,20), 29, 5196.0, 2414.0, 221.0, 267.0, 312.0, 13942.0, 50000.0], [new Date(2022,6,21), 27, 5044.0, 2153.0, 215.0, 265.0, 312.0, 15182.0, 50000.0], [new Date(2022,6,22), 30, 4938.0, 1955.0, 217.0, 266.0, 309.0, 16638.0, 50000.0], [new Date(2022,6,23), 30, 4869.0, 1882.0, 218.0, 268.0, 314.0, 17803.0, 50000.0], [new Date(2022,6,24), 31, 4541.0, 1716.0, 226.0, 275.0, 319.0, 18148.0, 50000.0]]);
+
+        var materialOptions = {
+          chart: {
+            title: 'Popularity analysis \n Top.Gun.Maverick.2022.1080p.HDTS.V2.x264'
+          },
+          width: 1300,
+          height: 900,
+          series: {
+            // Gives each series an axis name that matches the Y-axis below.
+            0: {axis: 'Rank'},
+            1: {axis: 'NumIPs'},
+            2: {axis: 'NumIPs'},
+            3: {axis: 'NumIPs'},
+            4: {axis: 'NumIPs'},
+            5: {axis: 'NumIPs'},
+            6: {axis: 'NumIPs'},
+            7: {axis: 'NumIPs'},
+          },
+          axes: {
+            // Adds labels to each axis; they don't have to match the axis names.
+            y: {
+              NumIPs: {label: 'Number of IPs'},
+              Rank: {label: 'Popularity Rank',  direction: -1}
+            }
+          }
+        };
+
+        var classicOptions = {
+          title: 'Popularity analysis \n Top.Gun.Maverick.2022.1080p.HDTS.V2.x264',
+          legend: {position: 'top', maxLines: 3},
+          width: 1400,
+          height: 1000,
+        // Gives each series an axis that matches the vAxes number below.
+          series: {
+            0: {targetAxisIndex: 1},
+            1: {targetAxisIndex: 0},
+            2: {targetAxisIndex: 0},
+            3: {targetAxisIndex: 0},
+            4: {targetAxisIndex: 0},
+            5: {targetAxisIndex: 0},
+            6: {targetAxisIndex: 0},
+            7: {targetAxisIndex: 0}
+          },
+          vAxes: {
+            // Adds titles to each axis.
+            0: {title: "Number of IPs", scaleType: 'log', titleTextStyle: { italic: false, fontSize: 17 }},
+            1: {title: "Popularity Rank", direction: -1, minValue:0, maxValue: 36 , titleTextStyle: { italic: false, fontSize: 17 } }
+          },
+          hAxis: {
+            title: 'Date', titleTextStyle: { italic: false, fontSize: 17 }, slantedText: true, slantedTextAngle: 90, textStyle: { fontSize: 13 }
+          },
+          
+        };
+
+      function drawMaterialChart() {
+        var materialChart = new google.charts.Line(chartDiv);
+        materialChart.draw(data, materialOptions);
+        button.innerText = 'Change to Classic';
+        button.onclick = drawClassicChart;
+      }
+
+      function drawClassicChart() {
+        var classicChart = new google.visualization.LineChart(chartDiv);
+        classicChart.draw(data, classicOptions);
+        button.innerText = 'Change to Material';
+        button.onclick = drawMaterialChart;
+      }
+
+      drawClassicChart();
+
+    }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

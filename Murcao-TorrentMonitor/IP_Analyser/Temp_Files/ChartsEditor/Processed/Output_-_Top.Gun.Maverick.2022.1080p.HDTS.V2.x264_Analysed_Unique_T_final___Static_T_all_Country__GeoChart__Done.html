@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([['Country', 'Number of IPs'], ['United States', 3144], ['Philippines', 3086], ['South Africa', 2385], ['Brazil', 2004], ['India', 1781], ['United Kingdom', 1739], ['Australia', 1316], ['Canada', 1223], ['Bangladesh', 633], ['Pakistan', 560], ['Netherlands', 509], ['Kenya', 425], ['New Zealand', 332], ['Italy', 324], ['Portugal', 322], ['United Arab Emirates', 307], ['Croatia', 287], ['Argentina', 265], ['Romania', 260], ['Israel', 254], ['Greece', 251], ['Poland', 249], ['Serbia', 242], ['Malaysia', 221], ['Slovenia', 215], ['Sweden', 209], ['Singapore', 203], ['Belgium', 203], ['Spain', 191], ['Switzerland', 183], ['Nepal', 177], ['China', 168], ['France', 168], ['Chile', 155], ['Thailand', 150], ['Mexico', 149], ['Ireland', 148], ['Namibia', 148], ['Saudi Arabia', 145], ['Indonesia', 141], ['Botswana', 130], ['Nigeria', 126], ['Turkey', 124], ['Hungary', 118], ['Czech Republic', 113], ['Germany', 106], ['Ethiopia', 105], ['Jamaica', 99], ['Japan', 96], ['Zimbabwe', 88], ['Norway', 87], ['Ghana', 87], ['Denmark', 85], ['Sri Lanka', 79], ['Tanzania', 73], ['Russia', 65], ['Hong Kong', 62], ['Trinidad and Tobago', 60], ['Vietnam', 59], ['Bulgaria', 59], ['Angola', 56], ['Taiwan', 56], ['Qatar', 54], ['Mauritius', 53], ['Estonia', 50], ['Peru', 50], ['Macedonia', 49], ['Lithuania', 49], ['Bosnia and Herzegovina', 45], ['Venezuela', 45], ['South Korea', 44], ['Morocco', 43], ['Cambodia', 41], ['Austria', 41], ['Colombia', 40], ['Iceland', 40], ['Mozambique', 37], ['Latvia', 35], ['Slovakia', 35], ['Zambia', 33], ['Lebanon', 32], ['Finland', 31], ['Uganda', 30], ['Malta', 29], ['Ecuador', 29], ['Oman', 28], ['Dominican Republic', 26], ['Malawi', 26], ['Barbados', 26], ['Cyprus', 25], ['Kuwait', 22], ['Egypt', 22], ['Uruguay', 22], ['Bahrain', 22], ['Ukraine', 21], ['Honduras', 20], ['Guyana', 20], ['Myanmar', 20], ['Luxembourg', 19], ['Swaziland', 18], ['Albania', 18], ['Rwanda', 18], ['Guatemala', 18], ['Sierra Leone', 18], ['Bhutan', 18], ['Panama', 17], ['Puerto Rico', 17], ['Djibouti', 17], ['Cameroon', 17], ['Brunei', 16], ['Iran', 16], ['Iraq', 15], ['Algeria', 13], ['Maldives', 13], ['Montenegro', 12], ['Costa Rica', 12], ['Bahamas', 11], ['Gibraltar', 11], ['Senegal', 10], ['Belize', 10], ['Paraguay', 10], ['Andorra', 10], ['Georgia', 10], ['Gambia', 10], ['Aruba', 9], ['Cape Verde', 9], ['Isle of Man', 9], ['Bolivia', 9], ['Fiji', 8], ['Monaco', 8], ['Papua New Guinea', 8], ['Democratic Republic of the Congo', 8], ['Seychelles', 7], ['Afghanistan', 7], ['Niger', 7], ['Somalia', 7], ['Kosovo', 7], ['El Salvador', 6], ['Ivory Coast', 6], ['Mauritania', 6], ['Moldova', 6], ['Tunisia', 5], ['Lesotho', 5], ['Samoa', 5], ['Mongolia', 5], ['Dominica', 5], ['Suriname', 5], ['Guadeloupe', 5], ['Uzbekistan', 5], ['Antigua and Barbuda', 5], ['Yemen', 5], ['Kazakhstan', 4], ['Micronesia', 4], ['Jordan', 4], ['Belarus', 4], ['Nicaragua', 4], ['Curacao', 4], ['Greenland', 4], ['Togo', 4], ['Jersey', 4], ['South Sudan', 3], ['Bermuda', 3], ['Mali', 3], ['Guam', 3], ['U.S. Virgin Islands', 3], ['Saint Kitts and Nevis', 3], ['Guinea-Bissau', 3], ['Burkina Faso', 3], ['Gabon', 3], ['Armenia', 3], ['New Caledonia', 2], ['Turks and Caicos Islands', 2], ['Falkland Islands', 2], ['Haiti', 2], ['Azerbaijan', 2], ['Guernsey', 2], ['Grenada', 2], ['Libya', 2], ['Sint Maarten', 2], ['Vanuatu', 2], ['Cayman Islands', 1], ['Aland Islands', 1], ['Tuvalu', 1], ['Liberia', 1], ['Sudan', 1], ['Cook Islands', 1], ['Saint Vincent and the Grenadines', 1], ['Solomon Islands', 1], ['Syria', 1], ['Saint Lucia', 1], ['Laos', 1], ['British Virgin Islands', 1], ['Madagascar', 1], ['Saint Martin', 1], ['Macao', 1], ['East Timor', 1], ['Guinea', 1], ['Liechtenstein', 1], ['Tonga', 1], ['Reunion', 1]]);
+
+        var options = {};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="regions_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

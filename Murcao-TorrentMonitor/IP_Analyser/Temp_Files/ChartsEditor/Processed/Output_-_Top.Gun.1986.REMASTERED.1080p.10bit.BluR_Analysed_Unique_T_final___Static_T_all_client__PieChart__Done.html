@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([['Torrent Client App', 'Number of IPs'], ['μTorrent', 906], ['qBittorrent', 793], ['libtorrent', 446], ['BitTorrent', 152], ['UW', 88], ['Deluge', 61], ['Tixati', 54], ['Vuze', 50], ['FDM', 49], ['Transmission', 43], ['MediaGet2', 27], ['BitWombat', 24], ['BiglyBT', 21], ['LibreTorrent', 19], ['Folx', 18], ['--Unknown_Unidentifiable--', 17], ['libTorrent', 14], ['Elementum', 11], ['BitLord', 7], ['Lr', 7], ['FL', 4], ['FrostWire', 4], ['Azureus', 4], ['aD', 3], ['Torch', 3], ['ADM', 2], ['BitComet', 2], ['PicoTorrent', 2], ['aTorrent', 2], ['TorrentvillaClient', 2], ['TorrentGear', 2], ['Flud', 1], ['uTorrentMac', 1], ['Media', 1], ['Mainline', 1], ['tTorrent', 1], ['Xunlei', 1], ['coc_coc_browser', 1], ['Zona', 1], ['BitBlinder', 1], ['qBittorrent Enhanced', 1]]);
+
+        var options = {
+          title: 'Torrent Client App and detected IPs \n Top.Gun.1986.REMASTERED.1080p.10bit.BluR',
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
